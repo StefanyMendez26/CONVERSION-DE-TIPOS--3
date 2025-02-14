@@ -6,23 +6,16 @@ class Programa
 {
     static void Main()
     {
-        // Solicitar al usuario que ingrese un número decimal
         Console.Write("Ingrese un número decimal: ");
-
-        // Leer la entrada del usuario y convertirla a double
-        if (double.TryParse(Console.ReadLine(), out double valorOriginal))
+        if (double.TryParse(Console.ReadLine(), out double numero))
         {
-            // Truncar el valor eliminando los decimales
-            int valorTruncado = (int)valorOriginal;
-
-            // Mostrar los valores
-            Console.WriteLine($"Valor original: {valorOriginal}");
-            Console.WriteLine($"Valor truncado: {valorTruncado}");
-            Console.WriteLine("El número ha sido truncado sin redondear.");
+            int truncado = (int)numero; // Conversión con truncamiento
+            Console.WriteLine($"Valor original: {numero}");
+            Console.WriteLine($"Valor truncado: {truncado}");
         }
         else
         {
-            Console.WriteLine("Entrada no válida. Asegúrese de ingresar un número decimal.");
+            Console.WriteLine("Entrada no válida. Ingrese un número decimal válido.");
         }
     }
 }
